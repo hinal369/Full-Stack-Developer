@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selector Demo</title>
+    <style>
+      /* p:first-child {
+      color: red;
+      font-size: 1.5rem;
+    }       */
+
+      /* article p:first-of-type {
+        color: red;
+        font-size: 1.5rem;
+      } */
+      /* 
+    article p:nth-child(1) {
+      color: red;
+      font-size: 1.5rem;
+    }
+    
+    article p:nth-of-type(1) {
+      color: red;
+      font-size: 1.5rem;
+    }
+
+    article p:first-child {
+      color: red;
+      font-size: 1.5rem;
+    } */
+      /* [data-type="primary"] {
+        color: red;
+      } */
+      /* [data-type] {
+        color: red;
+      } */
+      [data-type="primary" s] {
+        color: red;
+      }
+      p strong {
+        color: blue;
+      }
+      a:hover {
+        outline: 1px dotted green;
+      }
+      article p:nth-child(even) {
+        background: rgb(195, 164, 101);
+      }
+      .my-element::before {
+        content: "Prefix - ";
+      }
+
+      .top * + * {
+        margin-top: 1.5em;
+        color: red;
+      }
+      h1 + p {
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <p>I want to be red and larger than the other text.</p>
+      <p>I want to be normal sized and the default color.</p>
+    </article>
+    <div data-type="primary">Data Type Attribute With PRIMARY</div>
+    <div data-type="secondary">Data Type Attribute With SECONDARY</div>
+
+    <p class="my-element">
+      A paragraph of text with some <strong>bold text for emphasis</strong>.
+    </p>
+    <p>
+      Please read our
+      <a href="/terms"> <strong>Terms of Service</strong> </a>
+      <strong> and </strong>
+      <a href="/privacy"> <strong>Privacy Policy</strong> </a>
+    </p>
+    <a href="/terms">Terms of Service</a>
+
+    <article>
+      <div class="top box">
+        <p>I have no margin because I am the first child.</p>
+        <p>
+          I have <code>margin-top</code> because I am a
+          <strong>next sibling</strong>.
+        </p>
+        <p>
+          I am also a <strong>next sibling</strong>, so also get margin top.
+        </p>
+        <p>
+          I am also a <strong>next sibling</strong>, so also get margin top.
+        </p>
+        <p>
+          I am also a <strong>next sibling</strong>, so also get margin top.
+        </p>
+        <p>
+          I am also a <strong>next sibling</strong>, so also get margin top.
+        </p>
+      </div>
+
+      <h1>The Magic of CSS</h1>
+      <p>This paragraph turns large because it is right after the H1.</p>
+
+      <p>
+        This paragraph stays normal size because it follows another paragraph.
+      </p>
+    </article>
+  </body>
+</html>
