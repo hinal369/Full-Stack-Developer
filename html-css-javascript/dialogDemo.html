@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dialog Demo</title>
+  </head>
+  <body>
+    <dialog open>
+      <form method="dialog">
+        <button type="submit" autofocus>close</button>
+      </form>
+    </dialog>
+
+    <dialog id="dialog" open>
+    <form>
+    <button type="submit" aria-label="close" formmethod="dialog" formnovalidate>X</button>
+    <h2 id="dialogid">MLW Registration</h2>
+    <p>All fields are required</p>
+    <p>
+        <label>Name:
+           <input type="text" name="name" required />
+       </label>
+    </p>
+    <p>
+       <label>Warranty:
+          <input type="number" min="0" max="10" step=”1” name="warranty" required />
+        </label>
+    </p>
+    <p>
+       <label>Power source:
+           <select name="powersoure">
+          <option>AC/DC</option>
+          <option>Battery</option>
+          <option>Solar</option>
+           </select>
+       </label>
+    </p>
+    <p>
+       <button type="submit" formmethod="post">Submit</button>
+    </p>
+ <hr/>
+    <p>Additional buttons</p>
+      <button id="jsbutton">JS close</button>
+      <button id="reset" type="reset">Reset</button>
+    </p>
+  </form>
+</dialog>
+
+<button id="modal">Open Modal dialog</button>
+<p id="text"></p>
+<hr/>
+<h2>Random interactive elements</h2>
+<p>Before opening the dialog, tab thru these interactive elements. Then try again when the dialog is open.</p>
+<p>When the dialog is open, are any of these normally interactive elements interactive?</p>
+<p><a href="https://machinelearningworkshop.com">Machine Learning Workshop</a></p>
+  <p><label>Here is a useless input: <input></label></p>
+      <p>
+       <label>Here is a useless select:
+           <select name="yummy">
+          <option>Maple Syrup</option>
+          <option>Ice Cream</option>
+          <option>Bacon</option>
+           </select>
+       </label>
+    </p>
+  </body>
+</html>

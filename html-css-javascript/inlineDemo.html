@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inline Text Elements</title>
+    <style>
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          sans-serif;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fafafa;
+        color: #333;
+      }
+      section {
+        background: white;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      h2 {
+        color: #2c3e50;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 5px;
+        margin-top: 0;
+      }
+      /* Style some tech elements for clarity */
+      code,
+      samp,
+      kbd,
+      var {
+        font-family: "Courier New", Courier, monospace;
+        background: #f1f2f6;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+      kbd {
+        background: #ddd;
+        border-bottom: 2px solid #bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Semantic Inline Text Elements</h1>
+    <p>
+      This page demonstrates various inline tags used to format text inside
+      block-level elements.
+    </p>
+
+    <hr />
+
+    <section>
+      <h2>1. Data, Time & Abbreviations</h2>
+      <p>
+        The product code is <data value="99321">99321</data>.<br />
+        The event starts at
+        <time datetime="2026-05-28T14:00">2:00 PM on May 28, 2026</time>.<br />
+        We often use <abbr title="HyperText Markup Language">HTML</abbr> to
+        build sites.<br />
+        The term
+        <dfn><abbr title="Search Engine Optimization">SEO</abbr></dfn> refers to
+        optimizing web traffic.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Technical Writing & Computer Output</h2>
+      <p>
+        To declare a variable in JS, write
+        <code>let <var>x</var> = 5;</code>.<br />
+        Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy text.<br />
+        The server returned the following message:
+        <samp>404 Not Found</samp>.<br />
+        A exceptionallylongwordthatneedsabreakpoint<wbr />shoulduseawbrtag.
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Typography, Math & Editorial Markup</h2>
+      <p>
+        Einstein's famous equation is E = mc<sup>2</sup>.<br />
+        The chemical formula for water is H<sub>2</sub>O.<br />
+        The price was <del>$50</del> <ins>$39</ins> for today only!<br />
+        It is <s>acceptable</s> mandatory to write clean code.<br />
+        You must read <cite>The Web Standards</cite> guide.
+      </p>
+    </section>
+
+    <section>
+      <h2>4. Advanced Internationalization & Accentuation</h2>
+      <p>
+        This text goes left-to-right, but this goes:
+        <bdo dir="rtl">This text will be backwards</bdo>.<br />
+        User <bdi>لوريم إيبسوم</bdi>: 5 posts.<br />
+        Practice writing: 
+        <ruby
+          >漢 <rp>(</rp><rt>かん</rt><rp>)</rp> 字 <rp>(</rp><rt>じ</rt
+          ><rp>)</rp></ruby
+        >.
+      </p>
+    </section>
+
+    <section>
+      <h2>5. Focus & Presentation</h2>
+      <p>
+        You <em>must</em> finish this today! (Emphasis)<br />
+        This is <strong>critically important</strong> text.<br />
+        Use a <mark>yellow marker</mark> to highlight this sentence.<br />
+        Here are the stylistic ones: <i>Italic text</i>, <b>Bold text</b>, and
+        <u>Underlined text</u>.
+      </p>
+    </section>
+  </body>
+</html>

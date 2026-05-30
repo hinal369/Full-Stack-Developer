@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Images Demonstration</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      section {
+        background: #fff;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      /* Make images responsive so they don't overflow their boxes */
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-top: 15px;
+        border-radius: 4px;
+      }
+      code {
+        background: #eee;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Responsive Images Guide</h1>
+    <p>
+      Resize your browser window to see how the browser chooses different image
+      file resolutions or aspect ratios dynamically.
+    </p>
+
+    <section>
+      <h2>
+        Method 1: The <code>&lt;img&gt;</code> Tag with <code>srcset</code>
+      </h2>
+      <p>
+        The browser automatically picks the best size file based on the screen
+        width and pixel density.
+      </p>
+
+      <img
+        src="https://picsum.photos/id/10/800/500"
+        alt="Beautiful landscape lake"
+        srcset="
+          https://picsum.photos/id/10/400/250 400w,
+          https://picsum.photos/id/10/800/500 800w
+        "
+        sizes="(max-width: 800px) 400px, 800px"
+      />
+    </section>
+
+    <section>
+      <h2>Method 2: The <code>&lt;picture&gt;</code> Element</h2>
+      <p>
+        This explicitly forces the browser to shift images at specific media
+        queries. In this case, it loads a square close-up on small screens, and
+        a wide shot on larger screens.
+      </p>
+
+      <picture>
+        <source
+          media="(max-width: 600px)"
+          srcset="https://picsum.photos/id/237/400/400"
+        />
+        <source
+          media="(min-width: 601px)"
+          srcset="https://picsum.photos/id/237/800/400"
+        />
+        <img
+          src="https://picsum.photos/id/237/800/400"
+          alt="Cute black puppy"
+          loading="lazy"    
+        />
+      </picture>
+    </section>
+  </body>
+</html>

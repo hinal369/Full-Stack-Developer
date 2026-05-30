@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button
+      id="faq-trigger-1"
+      aria-expanded="false"
+      aria-controls="faq-content-1"
+    >
+      What is your return policy?
+    </button>
+
+    <div
+      id="faq-content-1"
+      role="region"
+      aria-labelledby="faq-trigger-1"
+      style="display: none"
+    >
+      <p>
+        Our return policy allows you to return any item within 30 days of
+        purchase for a full refund.
+      </p>
+    </div>
+
+    <script>
+      // Simple JavaScript to handle the toggle state
+      const button = document.getElementById("faq-trigger-1");
+      const content = document.getElementById("faq-content-1");
+
+      button.addEventListener("click", () => {
+        const isExpanded = button.getAttribute("aria-expanded") === "true";
+
+        // Toggle the ARIA state
+        button.setAttribute("aria-expanded", !isExpanded);
+
+        // Toggle the actual visibility
+        content.style.display = isExpanded ? "none" : "block";
+      });
+    </script>
+  </body>
+</html>

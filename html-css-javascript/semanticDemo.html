@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Semantic Chronicle | A Tech & Lifestyle Blog</title>
+    <style>
+      /* Basic styling just to visualize the layout structure */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+      header {
+        background: #2c3e50;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      nav a {
+        color: #fff;
+        margin: 0 10px;
+        text-decoration: none;
+      }
+      .container {
+        display: flex;
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 0 20px;
+        gap: 20px;
+      }
+      main {
+        flex: 3;
+      }
+      aside {
+        flex: 1;
+        background: #f4f4f4;
+        padding: 20px;
+        height: fit-content;
+      }
+      article {
+        margin-bottom: 40px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+      }
+      section {
+        margin: 20px 0;
+      }
+      footer {
+        background: #333;
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+      .tag {
+        background: #e74c3c;
+        color: #fff;
+        padding: 2px 6px;
+        font-size: 0.8rem;
+        border-radius: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>The Semantic Chronicle</h1>
+      <p>Exploring the web, one element at a time.</p>
+      <nav>
+        <a href="#home">Home</a> | <a href="#about">About</a> |
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="container">
+      <main>
+        <article>
+          <header>
+            <h2>Understanding Semantic HTML5</h2>
+            <p>
+              Published on <time datetime="2026-05-26">May 26, 2026</time> by
+              Alex Coder
+            </p>
+          </header>
+
+          <section>
+            <h3>Why Semantics Matter</h3>
+            <p>
+              Semantic HTML tags give meaning to the structure of web pages
+              rather than just defining their appearance. For example, using a
+              <code>&lt;main&gt;</code> tag tells screen readers and search
+              engines exactly where the core content lives.
+            </p>
+          </section>
+
+          <section>
+            <h3>The Breakdown of Heading Levels</h3>
+            <p>
+              Headings should always follow a strict hierarchy. Let's look at
+              how nesting works sub-conceptually:
+            </p>
+
+            <h4>Deep Dive into Headings</h4>
+            <p>
+              We already used H1 for the blog title, H2 for the post title, and
+              H3 for this section's major point. Now we look closer.
+            </p>
+
+            <h5>Sub-topic: H5 Importance</h5>
+            <p>
+              Rarely used, but perfect for highly specific sub-sections within a
+              detailed technical guide.
+            </p>
+
+            <h6>Minor Note: H6 Detail</h6>
+            <p>
+              The finest level of heading hierarchy, used for deep
+              cross-references or minor appendix notes.
+            </p>
+          </section>
+        </article>
+
+        <article>
+          <header>
+            <h2>The Future of Web Development</h2>
+            <p>
+              Published on <time datetime="2026-05-20">May 20, 2026</time> by
+              Morgan Tech
+            </p>
+          </header>
+
+          <section>
+            <h3>AI and the Browser</h3>
+            <p>
+              As browsers evolve, semantic layout becomes even more critical. AI
+              agents use these tags to scrape and summarize data accurately for
+              users.
+            </p>
+          </section>
+        </article>
+      </main>
+
+      <aside>
+        <h3>About the Blog</h3>
+        <p>
+          Welcome! This site is a living blueprint for clean, modern semantic
+          markup principles.
+        </p>
+
+        <hr />
+
+        <h3>Trending Tags</h3>
+        <ul>
+          <li><span class="tag">HTML5</span></li>
+          <li><span class="tag">Accessibility</span></li>
+          <li><span class="tag">WebDesign</span></li>
+        </ul>
+      </aside>
+    </div>
+
+    <footer>
+      <p>&copy; 2026 The Semantic Chronicle. Built with valid HTML5.</p>
+    </footer>
+  </body>
+</html>

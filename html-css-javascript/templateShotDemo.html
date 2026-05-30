@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Components Demo</title>
+</head>
+<body>
+
+    <template id="profile-card-template">
+        <style>
+            /* These styles are locked inside the component */
+            .card {
+                font-family: Arial, sans-serif;
+                background: #fff;
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 15px;
+                max-width: 250px;
+                margin-bottom: 15px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .username { color: #2c3e50; margin-top: 0; }
+            .bio { color: #7f8c8d; font-size: 0.9rem; }
+        </style>
+
+        <div class="card">
+            <h3 class="username"><slot name="user-name">Default Name</slot></h3>
+            
+            <p class="bio"><slot name="user-bio">No biography provided.</slot></p>
+        </div>
+    </template>
+
+    <h2>Our Team</h2>
+    
+    <profile-card>
+        <span slot="user-name">Alice Smith</span>
+        <span slot="user-bio">Lead Frontend Engineer. Loves CSS and coffee.</span>
+    </profile-card>
+
+    <profile-card>
+        <span slot="user-name">Bob Jones</span>
+        <span slot="user-bio">Backend Developer. Python and Docker enthusiast.</span>
+    </profile-card>
+
+    <profile-card></profile-card>
+
+
+    <script>
+        // Define a custom HTML element class
+        class ProfileCard extends HTMLElement {
+            constructor() {
+                super();
+                
+                // Attach a Shadow DOM to isolate styles
+                const shadow = this.attachShadow({ mode: 'open' });
+                
+                // Grab the template blueprint from the HTML above
+                const template = document.getElementById('profile-card-template');
+                
+                // Clone the template content and inject it into the shadow DOM
+                shadow.appendChild(template.content.cloneNode(true));
+            }
+        }
+
+        // Register the new tag <profile-card> with the browser
+        customElements.define('profile-card', ProfileCard);
+    </script>
+
+</body>
+</html>
