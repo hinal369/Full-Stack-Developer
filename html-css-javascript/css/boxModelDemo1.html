@@ -1,35 +1,39 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Content-Box vs Border-Box</title>
-  <style>
-    .my-box {
-  width: 200px;
-  border: 10px solid;
-  padding: 20px;
-}
-.my-box1 {
-  box-sizing: border-box;
-    width: 200px;
-    border: 10px solid;
-    padding: 20px;
-}
-  </style>
-</head>
-<body>
-  <h1>Content-Box vs Border-Box</h1>
-  <h2>Content-Box</h2>
-   <p>In content-box, the width and height only include the content. The padding and border are added to the total size of the element.</p> 
-  <div class="my-box">
-    This is a box with content-box sizing.
-  </div>
-  <hr>
-  h2>Border-Box</h2>
-  <p>In border-box, the width and height include the content, padding, and border. This means that the total size of the element is determined by the width and height properties, and the content area is adjusted to fit within those dimensions.</p>
-  <div class="my-box1">
-    This is a box with border-box sizing.
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content-Box vs Border-Box</title>
+    <style>
+      .my-box {
+        width: 200px;
+        border: 10px solid;
+        padding: 20px;
+      }
+      .my-box1 {
+        box-sizing: border-box;
+        width: 200px;
+        border: 10px solid;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Content-Box vs Border-Box</h1>
+    <h2>Content-Box</h2>
+    <p>
+      In content-box, the width and height only include the content. The padding
+      and border are added to the total size of the element.
+    </p>
+    <div class="my-box">This is a box with content-box sizing.</div>
+    <hr />
+    <h2>Border-Box</h2>
+    <p>
+      In border-box, the width and height include the content, padding, and
+      border. This means that the total size of the element is determined by the
+      width and height properties, and the content area is adjusted to fit
+      within those dimensions.
+    </p>
+    <div class="my-box1">This is a box with border-box sizing.</div>
+  </body>
 </html>

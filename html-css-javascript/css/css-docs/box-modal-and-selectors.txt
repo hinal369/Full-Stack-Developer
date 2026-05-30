@@ -97,6 +97,7 @@
         Example: p strong {
             color: blue;
           }
+
       b. Next sibling combinator (+)
       - You can look for an element that immediately follows another element by using a + character in your selector.
       - The Rule: A + B
@@ -105,10 +106,12 @@
       Example: .top * + * {
               margin-top: 1.5em;
             }
+
       c. Subsequent- sibling combinator (~):
       - The Rule: A ~ B
       - What it means: Target all element Bs that follow element A, as long as they share the same parent.
        They don't have to be right next to each other; they just have to come somewhere down the line.
+       
       d. Child Selector (>):
       - The Rule: A > B
       - What it means: Target element B only if it is a direct, immediate child of element A. 
