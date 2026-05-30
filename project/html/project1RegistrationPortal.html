@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Portal</title>
+  </head>
+  <body>
+    <header>
+      <h1>Sign Up</h1>
+      <nav>
+        <a href="#register">Register</a>
+        <a href="#about">about</a>
+        <a href="#career">Career</a>
+        <a href="#contactUs">Contact Us</a>
+      </nav>
+    </header>
+    <hr />
+    <main>
+      <form action="#register" method="post" enctype="multipart/form-data">
+        <section id="step1">
+          <h2>Step 1: Account Security</h2>
+          <label for="profile">Profile:</label>
+          <input
+            type="file"
+            name="profile"
+            id="profile"
+            accept=".jpg, .jpeg, .png"
+          />
+          <br />
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
+            title="Password must contain:
+            - At least 8 characters
+            - One uppercase letter
+            - One lowercase letter
+            - One number
+            - One special character (@$!%*?&)"
+          />
+        </section>
+
+        <section id="step2">
+          <h2>Step2: Personal Details</h2>
+          <label for="firstName">First Name: </label>
+          <input type="text" id="firstName" name="firstName" autocomplete="given-name" required/>
+          <label for="lastName">Last Name: </label>
+          <input type="text" id="lastName" name="lastName" autocomplete="family-name" required/>
+          <br />
+          <fieldset>
+            <legend>Gender:</legend>
+            <input type="radio" name="gender" id="female" value="female" required />
+            <label for="female">Female</label>
+            <input type="radio" name="gender" id="male" value="male" required />
+            <label for="male">Male</label>
+          </fieldset>
+          <br />
+          <label for="birth">Birth Date: </label>
+          <input type="date" name="birth" id="birth" max="2020-05-29" required />
+        </section>
+
+        <section id="step3">
+          <h2>Step 3: Professional Info</h2>
+          <fieldset>
+            <legend>Hobbies:</legend>
+            <input type="checkbox" name="hobby" id="coding" value="coding"/>
+            <label for="coding">Coding</label>
+            <br />
+            <input type="checkbox" name="hobby" id="reading" value="reading"/>
+            <label for="reading">Reading</label>
+            <br />
+            <input type="checkbox" name="hobby" id="writing" value="writing" />
+            <label for="writing">Writing</label>
+          </fieldset>
+          <br />
+
+          <br />
+          <label for="phone">Phone Number:</label>
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            required
+            placeholder="+91 (90890) (00000)"
+            pattern="[0-9]{12}"
+            title="Enter your 12-digit phone format starting with country code (e.g., 919089000000)"
+          />
+          <br />
+          <label for="degree">Degree: </label>
+          <select name="degree" id="degree" required>
+             <option value="" disabled selected>
+                -- Select your degree --
+              </option>
+            <option value="BCA">Bachelor of Computer Application</option>
+            <option value="BSC">Bachelor of Science</option>
+            <option value="MSC">Master of Science</option>
+            <option value="MCA">Master of Computer Application</option>
+          </select>
+        </section>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </main>
+     <footer>
+      <p>&copy; 2026 Hinal Khalasi. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

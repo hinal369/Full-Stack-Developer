@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Semantic HTML Table</title>
+    <style>
+      /* Basic styling to clearly see the structural areas */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+        margin: 20px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      }
+      caption {
+        font-size: 1.3rem;
+        font-weight: bold;
+        padding: 10px;
+        color: #2c3e50;
+        text-align: left;
+      }
+      th,
+      td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        text-align: left;
+      }
+      /* Styling the header */
+      thead {
+        background-color: #2c3e50;
+        color: #ffffff;
+      }
+      /* Zebra striping the body rows */
+      tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      /* Highlight row on hover */
+      tbody tr:hover {
+        background-color: #f1f1f1;
+      }
+      /* Styling the footer */
+      tfoot {
+        background-color: #ecf0f1;
+        font-weight: bold;
+        border-top: 2px solid #bdc3c7;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <caption>
+        Company Q1 Hardware Sales Report
+      </caption>
+
+      <colgroup>
+        <col style="background-color: #fff9e6; width: 40%" />
+        <col style="width: 20%" />
+        <col style="width: 25%" />
+        <col style="width: 15%" />
+      </colgroup>
+
+      <thead>
+        <tr>
+          <th scope="col">Product Name</th>
+          <th scope="col">Price per Unit</th>
+          <th scope="col">Quantity Sold</th>
+          <th scope="col">Total Revenue</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Pro Wireless Keyboard</td>
+          <td>$89.99</td>
+          <td>150</td>
+          <td>$13,498.50</td>
+        </tr>
+        <tr>
+          <td>Ergonomic Mouse</td>
+          <td>$59.99</td>
+          <td>210</td>
+          <td>$12,597.90</td>
+        </tr>
+        <tr>
+          <td>UltraWide 4K Monitor</td>
+          <td>$349.99</td>
+          <td>45</td>
+          <td>$15,749.55</td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <td colspan="2">Total Financial Calculations</td>
+          <td>405 Units</td>
+          <td>$41,845.95</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <figure>
+      <figcaption>
+        <strong>Table 1a: Annual Energy Consumption Breakdown.</strong>
+        Notice the significant spike in energy usage during July and August,
+        which corresponds directly to record-high summer temperatures and
+        increased air conditioning demands.
+      </figcaption>
+
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Month</th>
+            <th scope="col">Energy Used (kWh)</th>
+            <th scope="col">Average Temp (°C)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>June</td>
+            <td>420</td>
+            <td>28°C</td>
+          </tr>
+          <tr>
+            <td>July</td>
+            <td>680</td>
+            <td>35°C</td>
+          </tr>
+          <tr>
+            <td>August</td>
+            <td>710</td>
+            <td>36°C</td>
+          </tr>
+        </tbody>
+      </table>
+    </figure>
+
+    <table>
+  <caption>MLW Alumni</caption>
+  <thead>
+    <tr>
+      <th rowspan="2" id="name" scope="col">Name</th>
+      <th colspan="2" id="path">Career path</th>
+      <th rowspan="2" id="year">Year</th>
+    </tr>
+    <tr>
+      <th id="past" scope="col">Past</th>
+      <th id="future" scope="col">Destiny</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="hal" scope="row">Hal Gibrah</th>
+      <td headers="hal path past">Calculator</td>
+      <td headers="hal path future">Mars rover</td>
+      <td>2020</td>
+    </tr>
+    <tr>
+      <th id="cathy" scope="row">Cathy Terr</th>
+      <td headers="cathy path past">Waste disposal</td>
+      <td headers="cathy path future">Automated teller</td>
+      <td>2018</td>
+    </tr>
+    <tr>
+      <th id="lou" scope="row">Lou Minious</th>
+      <td headers="lou path past">Lightbulb</td>
+      <td headers="lou path future">Smart bulb</td>
+      <td>1956</td>
+    </tr>
+  </tbody>
+</table>
+  </body>
+</html>
