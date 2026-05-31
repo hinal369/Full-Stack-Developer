@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nesting Demo 1</title>
+    <style>
+      .feature {
+        &:last-child {
+          --last-child-outline-color: deeppink;
+        }
+
+        /* & is optional when targeting a desendent selector */
+        & :last-child {
+          --last-child-outline-color: lightseagreen;
+        }
+
+        &.highlight {
+          background: rgb(4, 180, 27);
+        }
+
+        /* & is optional when targeting a desendent selector */
+        & .highlight {
+          background: rgb(166, 12, 12);
+        }
+      }
+
+      :last-child {
+        outline: 3px dotted var(--last-child-outline-color, transparent);
+      }
+
+      /* Presentation styles */
+      .feature {
+        border: 1px solid var(--color-stroke);
+        display: grid;
+        max-inline-size: 65ch; /* to match external stylesheet text */
+        margin: 1em;
+
+        &::before {
+          background: var(--color-primary-dark);
+          color: white;
+          content: var(--content, '<div class="feature">');
+          font-family: monospace;
+          margin-block-end: 1em;
+          padding: 0.25lh 1ch;
+          place-self: start end;
+        }
+
+        &.highlight {
+          --content: '<div class="feature highlight">';
+        }
+        p& { font-weight: bold; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <h1>CSS Nesting using <code>&</code></h1>
+
+        <div class="feature">
+          <p>Each div has a feature class.</p>
+          <p class="highlight">
+            The second paragraph in each div has a class of
+            <code>.highlight</code> which gives it a honeydew background color.
+          </p>
+          <p>
+            All last-child items have an outline. The last-child items nested
+            within <code>.feature</code> have a lightseagreen outline color.
+            This includes further nested items like this
+            <strong>strong tag</strong>.
+          </p>
+        </div>
+
+        <div class="feature highlight">
+          <p>
+            In addition to <code>.feature</code>, this div also has a class of
+            <code>.highlight</code> which has an aliceblue background color.
+          </p>
+          <p class="highlight">
+            The second paragraph in each div has a class of
+            <code>.highlight</code> which gives it a honeydew background color.
+          </p>
+          <p>
+            All last-child items have an outline. The last-child items nested
+            within <code>.feature</code> have a lightseagreen outline color.
+            This includes further nested items like this
+            <strong>strong tag</strong>.
+          </p>
+        </div>
+
+        <div class="feature">
+          <p>
+            This div is the last-child which is assigned an outline color of
+            deeppink.
+          </p>
+          <p class="highlight">
+            The second paragraph in each div has a class of
+            <code>.highlight</code> which gives it a honeydew background color.
+          </p>
+          <p>
+            All last-child items have an outline. The last-child items nested
+            within <code>.feature</code> have a lightseagreen outline color.
+            This includes further nested items like this
+            <strong>strong tag</strong>.
+          </p>
+        </div>
+
+      </div>
+    </main>
+  </body>
+</html>

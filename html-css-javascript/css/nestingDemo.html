@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nesting Demo</title>
+    <style>
+      .feature {
+        &:last-child {
+          /* Selects the .feature element that is the :last-child, equivalent to .feature:last-child */
+          /* color: red; */
+        }
+
+        & :last-child {
+          /* Selects the :last-child inside of a .feature element, equivalent to .feature :last-child */
+          /* color: blue; */
+        }
+
+        &.highlight {
+          /* Selects .feature elements that also have a .highlight class, equivalent to .feature.highlight */
+          font-weight: bold;
+          font-size: 1.2em;
+          border: 2px solid orange;
+        }
+
+        & .highlight {
+          /* Selects elements inside of the .feature element with the class .highlight, equivalent to .feature .highlight */
+           font-weight: bold;
+          font-size: 1.2em;
+          border: 2px solid pink;
+        }
+
+        button {
+          /* Selects button elements inside of the .feature element, equivalent to .feature button */
+          background-color: lightblue;
+          border: 2px solid blue;
+          padding: 10px 20px;
+          cursor: pointer;
+        }
+
+        .link {
+          /* Selects anchor elements inside of the .feature element, equivalent to .feature a */
+          color: green;
+          text-decoration: none;
+        }
+        .text {
+          /* Selects input elements with class .text inside of the .feature element, equivalent to .feature input.text */
+          padding: 5px;
+          border: 1px solid gray;
+        }
+
+        + .heading {
+          color: blue;
+        }
+
+        > p {
+          color: purple;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">Heading 1</h1>
+      <div class="feature">
+        <h3>Feature Box 1</h3>
+        <p>This is standard text.</p>
+        <p class="highlight">This is a highlighted alert inside box 1.</p>
+        <p>This is the last item inside box 1.</p>
+
+        <div class="highlight">
+          <h4>Nested Highlight</h4>
+          <p>This is a nested highlight inside box 1.</p>
+        </div>
+      </div>
+
+      <h2 class="heading">Heading 2</h2>
+      <div class="feature ">
+        <h3 class="highlight">Feature Box 2 (Highlighted Box)</h3>
+        <p>This whole box is special because of its class.</p>
+        <p>This is the last item inside box 2.</p>
+      </div>
+
+      <h3 class="heading">Heading 3</h3>
+      <div class="feature">
+        <h3>Feature Box 3</h3>
+        <p>This is the last .feature box in the container.</p>
+      </div>
+
+      <h4 class="heading">Heading 4</h4>
+      <div class="feature">
+        <button>Click Me</button>
+        <br />
+        <a href="#" class="link">This is a link inside the highlighted box.</a>
+        <br />
+        <input type="text" placeholder="FirstName" class="text" />
+        <input type="text" placeholder="LastName" class="text" />
+      </div>
+
+      <h5 class="heading">Heading 5</h5>
+      <h6 class="heading">Heading 6</h6>
+    </div>
+  </body>
+</html>

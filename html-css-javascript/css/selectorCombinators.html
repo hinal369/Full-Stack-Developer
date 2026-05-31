@@ -3,35 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Selectors Combinators</title>
     <style>
+      /* Descendant Selector*/
       div p {
         color: blue;
       }
-      article > div > p {
-        color: green;
-      }
+      /* Next Sibling Selector */
       h2 + p {
         font-weight: bold;
         color: red;
       }
-      h2 ~ p {
-        color: grey;
+      /* Child Selector */
+      article > div > p {
+        color: green;
+      }
+      /* General Sibling Selector */
+      article h2 ~ p {
+        color: rgb(182, 207, 37);
       }
     </style>
   </head>
   <body>
-    <article>
-      <h1>Child Selector</h1>
-      <div>
-        <p>This turns green (direct child).</p>
-        <span>
-          <p>This turns blue (grandchild).</p>
-        </span>
-      </div>
-    </article>
-    <h1>Descendant Selector</h1>
     <div>
+      <h1>Descendant Selector</h1>
       <p>This turns blue (direct child).</p>
       <span>
         <p>This ALSO turns blue (grandchild).</p>
@@ -43,12 +38,26 @@
     <!-- <h3>Sub-subheading</h3> -->
     <p>This turns bold (it is the immediate next neighbor).</p>
     <p>This is ignored (it is a neighbor, but not the *next* one).</p>
+
+    <article>
+      <h1>Child Selector</h1>
+      <div>
+          <p>This turns green (direct child).</p>
+        <span>
+          <p>This turns blue (grandchild).</p>
+        </span>
+      </div>
+    </article>
+
     <article>
       <h1>General Sibling Selector</h1>
       <h2>Subheading</h2>
       <!-- <h3>Sub-subheading</h3> -->
       <p>This turns grey (it is a sibling).</p>
       <p>This also turns grey (it is a sibling).</p>
+      <div>
+        <p>This is ignored (it is not a sibling).</p>       
+      </div>    
     </article>
   </body>
 </html>
