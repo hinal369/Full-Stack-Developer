@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Demo 1</title>
+    <style>
+      .swatch {
+        padding: 0.5rem;
+        border: 1px solid var(--color-stroke);
+      }
+
+      .swatch__sample {
+        height: 120px;
+        border: 1px solid var(--color-stroke);
+        margin-bottom: 1rem;
+      }
+
+      .auto-grid {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fill,
+          minmax(var(--auto-grid-min-size, 12rem), 1fr)
+        );
+        gap: 1rem;
+        padding: 0;
+      }
+
+      li + li {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <article class="flow">
+          <h1>HSL Colors</h1>
+          <ul class="auto-grid" role="list">
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: hsl(344, 79%, 40%)"
+                aria-hidden="true"
+              ></div>
+              <code>hsl(344 79% 40%)</code>
+            </li>
+
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: hsl(196 41% 56%)"
+                aria-hidden="true"
+              ></div>
+              <code>hsl(196 41% 56%)</code>
+            </li>
+
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: hsl(40 91% 60%)"
+                aria-hidden="true"
+              ></div>
+              <code>hsl(40 91% 60%)</code>
+            </li>
+
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: color(srgb 0.72 0.8 0.25)"
+                aria-hidden="true"
+              ></div>
+              color(srgb .72 .08 .25)
+            </li>
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: color(display-p3 0.72 0.8 0.25)"
+                aria-hidden="true"
+              ></div>
+              color(display-p3 .72 .80 .25)
+            </li>
+
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: color(srgb 0.98982 0.50329 0.30843)"
+                aria-hidden="true"
+              ></div>
+              color(srgb .98982 .50329 .30843)
+            </li>
+
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: color(display-p3 0.98982 0.50329 0.30843)"
+                aria-hidden="true"
+              ></div>
+              color(display-p3 .98982 .50329 .30843)
+            </li>
+          </ul>
+
+          <ul class="auto-grid" role="list">
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: oklab(50% 0.1 -0.2)"
+                aria-hidden="true"
+              ></div>
+              <code>oklab(50% 0.1 -0.2)</code>
+            </li>
+
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: oklch(85.026% 0.14388 201.526)"
+                aria-hidden="true"
+              ></div>
+              <code>oklch(85.026% 0.14388 201.526)</code>
+            </li>
+
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: hsl(40 91% 60%)"
+                aria-hidden="true"
+              ></div>
+              <code>hsl(40 91% 60%)</code>
+            </li>
+
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: color(srgb 0.72 0.8 0.25)"
+                aria-hidden="true"
+              ></div>
+              color(srgb .72 .08 .25)
+            </li>
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: color(display-p3 0.72 0.8 0.25)"
+                aria-hidden="true"
+              ></div>
+              color(display-p3 .72 .80 .25)
+            </li>
+
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: color(srgb 0.98982 0.50329 0.30843)"
+                aria-hidden="true"
+              ></div>
+              color(srgb .98982 .50329 .30843)
+            </li>
+
+            <li class="swatch">
+              <div
+                class="swatch__sample"
+                style="background: color(display-p3 0.98982 0.50329 0.30843)"
+                aria-hidden="true"
+              ></div>
+              color(display-p3 .98982 .50329 .30843)
+            </li>
+          </ul>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

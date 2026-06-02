@@ -1,0 +1,41 @@
+Choosing Color
+  1. Named Colors: purple, tomato,  goldenrod, black, white, red, blue, and gray. (148 named Colors)
+  2. Numeric colors:
+    a. Hex colors: #b71540 (0-9) & (A-F). 
+    Transparency add two more digit #b71540BF
+
+    b. RGB (Red, Green, Blue) / rgba() : rgb(183 21 64) or rgb(100% 100% 100%) (0-255)
+    Transparency: rgb(0 0 0 / 50%) or rgb(0 0 0 / 0.5).
+
+  3. High definition colors: 
+    a. HSL (Hue, Saturation, Lightness) / hsla():  hsl(344 79% 40%) (0-360);
+    Transparency: hsla(0, 0%, 0%, 0.5) or hsla(0, 0%, 0%, 50%) 
+
+    b. The color() function: color(srgb 0.9 0.2 0.4) (0-1);
+     rgb(72% 8% 25%) = color(srgb .72 .08 .25).
+     Display P3: color(display-p3 0.72 0.8 0.25);
+     color(srgb .72 .08 .25) != color(display-p3 0.72 0.8 0.25)
+  
+    c. Oklab: It's useful for making smooth gradients and for adjusting a color's saturation, while keeping the hue and lightness.
+    oklab(75% 0.1 0.1) / oklab(lightness, a, b)
+    - Lightness: 0 to 1 or 0% to 100%.
+    - a channel:  -0.4 to 0.4 or 0% to 100%. Lower values are greener, and higher values are more red.
+    - b channel: -0.4 to 0.4 or 0% to 100%. Lower values are bluer, and higher values are more yellow.
+  
+    d. OkLCh: OkLCh is the polar, or cylindrical form of OKLab, and is defined with channels of Lightness, Chroma, and Hue. 
+    It is useful for adjusting colors in a perceptually uniform way. This means that changes to the hue won't impact how light or saturated 
+    a color appears.
+    oklch(80% 0.1 200)
+    - Lightness: 0 to 1 or 0% to 100%
+    - Chroma:  A value of 100% is the same as .4, but it's possible to quickly get outside of gamut with values close to .4
+    - Hue is specified in degrees, just like hsl()
+
+    Color-mix:
+    - color-mix(in hsl, --start, --end)
+    - color-mix(in srgb, --start, --end)
+    - color-mix(in oklch, --start, --end)
+    - color-mix(in oklch longer hue, --start, --end)
+    -  color: oklch(from oklch(62% 0.25 29) calc(l / 2) c 180);
+
+
+

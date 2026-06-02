@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Demo</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        color: #ffffff;
+      }
+      .no-alpha {
+        background-color: #000000;
+        border: 1px solid #000000;
+        padding: 2em;
+      }
+      .alpha {
+        background-color: #000000bf;
+        border: 1px solid #000000;
+        padding: 2em;
+      }
+      .wrapper {
+        max-width: 40ch;
+        margin: 0 auto;
+        border: 1px solid #000000;
+        background-color: rgb(50%, 60%, 40%);
+        padding: 2em;
+      }
+
+      .my-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        margin-top: 2em;
+        background-color: rgb(120, 70, 100, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <article class="flow">
+          <h1>HEX Codes With Alpha</h1>
+          <div class="diagram">
+            <p class="no-alpha">
+              This has a standard black hex code of <code>#000000</code>.
+            </p>
+            <p class="alpha">
+              This has an alpha hex code of <code>#00000080</code>.
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="wrapper my-wrapper">
+        <article>
+          <h1>HEX Codes With Alpha</h1>
+           <p class="no-alpha">
+          This has a standard black hex code of <code>#000000</code>.
+        </p>
+        <p class="alpha">
+          This has an alpha hex code of <code>#00000080</code>.
+        </p>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>
