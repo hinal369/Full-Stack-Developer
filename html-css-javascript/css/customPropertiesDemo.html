@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Properties Demo</title>
+    <style>
+      :root {
+        --main-color: #007bff;
+        --base-padding: 1rem;
+        --base-margin: 2rem;
+      }
+      .card {
+        background-color: var(--alert, var(--featured, lightcyan));
+        --base-size: 1em;
+        /* background-color: var(--main-color); */
+        padding: var(--base-padding);
+        margin: var(--base-margin);
+      }
+
+      .card .card-title {
+        font-size: calc(2 * var(--base-size));
+      }
+
+      /* the first fallback */
+      .featured {
+        --featured: lightpink;
+      }
+
+      .alert {
+        --alert: yellow;
+      }
+
+      /* Presentation styles */
+      .card {
+        display: grid;
+        gap: 1em;
+        border-color: lch(92 10.947 199);
+        border-style: solid;
+        border-width: 0.01em 0.01em 0.01em 0.5rem;
+        margin-block-start: 2.5em;
+        padding: 1.5em;
+
+        h2 {
+          color: inherit;
+        }
+
+        button {
+          background-color: var(--btn-color, rgb(20, 239, 13));
+          color: white;
+          border: none;
+          padding: 0.5em 1em;
+          cursor: pointer;
+          border-radius: 1em;
+          border: 0.05em solid;
+          border-color: var(--btn-border-color, rgb(3, 42, 2));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <div class="card base">
+          <h2 class="card-title">CSS custom property fallbacks</h2>
+          <p class="my-element">
+            This example shows how fallbacks within custom properties work. This
+            card will use the the last defined background-color fallback
+            (lightcyan) since it is the only valid/defined color in the list for
+            <code>.card</code>.
+            <button>
+              Read More
+            </button>
+          </p>
+        </div>
+        <div class="card featured">
+          <h2 class="card-title">Featured card</h2>
+          <p>
+            The featured class defines the first fallback in the stack as a
+            lightpink background color.
+          </p>
+        </div>
+
+        <div class="card alert">
+          <h2 class="card-title">Alert card</h2>
+          <p>
+            Someone forgot to uncomment the value for alert, so it falls back to
+            lightcyan.
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

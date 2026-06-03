@@ -13,8 +13,12 @@
         /* grid-template-columns: repeat(3, 1fr); */
         /* grid-template-columns: repeat(3, minmax(0, 1fr)); */
         /* grid-template-columns: 200px repeat(2, 1fr 2fr) 200px; */
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
         grid-column-end: span 2;
+        grid-template-columns:
+          [main-start aside-start] 1fr
+          [aside-end content-start] 2fr
+          [content-end main-end]; /* a two column layout */
       }
 
       .box {
@@ -52,7 +56,7 @@
         display: grid;
 
         /* EXPLICIT GRID DEFINITION */
-        grid-template-columns: 200px 200px;
+        grid-template-columns: repeat(6, 200px);
         grid-template-rows: 100px 100px;
 
         /* IMPLICIT GRID BEHAVIOR */

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom @property Demo</title>
+    <style>
+      @property --primary {
+        syntax: "<color>";
+        inherits: true;
+        initial-value: whitesmoke;
+      }
+
+      .card {
+        --primary: 2rem;
+
+        background-color: var(--primary);
+      }
+
+      .featured {
+        --primary: yellow;
+
+        background-color: var(--primary);
+      }
+
+      /* Presentation styles */
+      .cards {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: repeat(auto-fit, minmax(33ch, 1fr));
+        margin-block-start: 2.5em;
+      }
+
+      .card {
+        border-color: oklch(93% 0 10);
+        border-radius: 1rem;
+        border-style: solid;
+        border-width: 0.1rem;
+        display: grid;
+        gap: 1em;
+        padding: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <div class="cards">
+          <div class="card">
+            <h2>Default Card</h2>
+            <p>
+              This default card has an invalid value for
+              <code>--primary</code> so it uses the initial value for the
+              background color.
+            </p>
+          </div>
+          <div class="card featured">
+            <h2>Featured Card</h2>
+            <p>
+              This featured card has a valid value for <code>--primary</code> so
+              it uses yellow for the background color.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
