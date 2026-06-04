@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-Classes Demo</title>
+    <style>
+      html {
+        font-family: Arial, sans-serif;
+        background-color: rgb(240, 240, 240);
+        color: rgb(50, 50, 50);
+      }
+      a:hover {
+        color: rgb(1, 75, 11);
+        font-weight: bold;
+      }
+
+      button {
+        background-color: rgb(14, 170, 51);
+        color: white;
+        border: 2px solid rgb(3, 50, 18);
+        border-radius: 5px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+
+      button:disabled {
+        background: grey;
+        border-color: grey;
+        cursor: not-allowed;
+      }
+
+      button:active:enabled {
+        background-color: rgb(13, 3, 45);
+        color: white;
+      }
+
+      button:focus:enabled {
+        background-color: rgb(0, 0, 0);
+        color: white;
+        outline: dashed 2px rgb(255, 0, 0);
+      }
+
+      button:focus-visible {
+        outline: 1px solid rgb(240, 98, 16);
+        background-color: rgb(240, 98, 16, 0.5);
+      }
+
+      main {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      header {
+        background-color: rgb(14, 170, 51);
+        padding: 10px 0;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+      }
+      #instructions:target {
+        background-color: rgb(255, 255, 0, 0.2);
+        border-left: 5px solid rgb(255, 255, 0);
+        padding-left: 15px;
+      }
+
+      input:invalid {
+        border: 2px solid red;
+      }
+
+      input:valid {
+        border: 2px solid green;
+      }
+
+      ul li:last-child {
+        color: rgb(255, 0, 0);
+        font-weight: bold;
+      }
+
+      ul li:first-child {
+        color: rgb(0, 0, 255);
+        font-weight: bold;
+      }
+
+      ol li:nth-child(3n + 3) {
+        background-color: rgb(142, 19, 19, 0.5);
+      }
+
+      ol li:nth-last-of-type(5) {
+        background-color: rgb(4, 92, 132, 0.5);
+      }
+
+      ul li:nth-child(even) {
+        background-color: rgb(0, 255, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#ingredients">Ingredients</a></li>
+          <li><a href="#instructions">Instructions</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="overview">
+        <h2>Overview</h2>
+        <p>
+          Paneer Lababdar is a rich, creamy, and mildly spicy North Indian
+          curry. It features soft paneer cubes simmered in a luscious gravy made
+          from tomatoes, cashews, and aromatic spices. This restaurant-style
+          recipe takes about 40 minutes to make and yields 4 to 5 servings.
+        </p>
+      </section>
+      <section id="ingredients">
+        <h2>Ingredients</h2>
+        <h3>For the Gravy:</h3>
+        <ul>
+          <li>4 medium tomatoes (roughly chopped)</li>
+          <li>10–12 cashews</li>
+          <li>1 inch ginger (chopped)</li>
+          <li>3–4 garlic cloves</li>
+          <li>Whole spices: 1 green cardamom, 2 cloves, and 1 bay leaf</li>
+        </ul>
+        x
+        <h3>For the Main Curry:</h3>
+        <ul>
+          <li>250g paneer, cut into 1-inch cubes</li>
+          <li>50g paneer, finely grated (adds thickness)</li>
+          <li>1 large onion, finely chopped</li>
+          <li>2 tbsp butter or oil (plus 1 extra tbsp butter for finishing)</li>
+          <li>1/2 tsp cumin powder</li>
+          <li>1 tsp Kashmiri red chili powder (for color)</li>
+          <li>1 tsp coriander powder</li>
+          <li>1/4 tsp garam masala</li>
+          <li>1 tsp Kasuri methi (dry fenugreek leaves), crushed</li>
+          <li>1/4 tbsp heavy cream or low-fat creamr 1/2</li>
+          <li>tsp sugar</li>
+          <li>Salt to taste</li>
+          <li>1/2 cup water (plus more for boiling)</li>
+        </ul>
+        <p>This page demonstrates the use of CSS pseudo-classes.</p>
+      </section>
+      <section id="instructions">
+        <h2>Instructions</h2>
+        <p>Follow these steps to prepare the dish:</p>
+        <ol>
+          <li>Heat oil in a pan and add the whole spices.</li>
+          <li>Add the chopped onions and cook until golden brown.</li>
+          <li>Add the ginger-garlic paste and cook for a minute.</li>
+          <li>Add the tomatoes and cook until they soften.</li>
+          <li>Add the cashews and cook for a few minutes.</li>
+          <li>Add the spices and cook for a minute.</li>
+          <li>Add the paneer cubes and cook for a few minutes.</li>
+          <li>Add the cream and sugar, and cook for a minute.</li>
+          <li>Season with salt and garnish with fresh coriander.</li>
+        </ol>
+      </section>
+
+      <div>
+        <form>
+          <label for="email">Email address</label>
+          <input
+            type="email"
+            id="email"
+            required
+            placeholder="A valid email, like name@domain.com"
+            aria-describedby="emailinfo"
+          />
+          <p class="info" id="emailinfo">
+            Add a valid email address to see the state change
+          </p>
+        </form>
+      </div>
+
+      <div>
+        <button disabled>I am a button with a disabled state</button>
+        <button>I am an enabled button</button>
+      </div>
+    </main>
+  </body>
+</html>

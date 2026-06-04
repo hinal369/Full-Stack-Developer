@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pseudo-Element Demo</title>
+    <style>
+      p::first-letter {
+        font-size: 3em;
+        color: #ff6347;
+        float: left;
+        line-height: 1;
+        padding-right: 0.1em;
+      }
+
+      p::first-line {
+        font-weight: bold;
+        color: #2e8b57;
+      }
+      article {
+        max-width: 600px;
+        margin: 2em auto;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+      video::backdrop {
+        background-color: goldenrod;
+      }
+
+      ::marker {
+        color: hotpink;
+      }
+      ul ::marker {
+        font-size: 1.5em;
+        content: "\002B" " ";
+      }
+
+      ol ::marker {
+        font-size: 1.1em;
+      }
+
+      ::selection {
+        background: green;
+        color: white;
+      }
+      p:nth-of-type(2)::selection {
+        background: darkblue;
+        color: yellow;
+      }
+      input::placeholder {
+        color: darkcyan;
+      }
+      video::cue {
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <h1>The following paragraph has a lovely drop cap</h1>
+      <p>
+        Drop caps are a great way to introduce an article of content and they
+        look great. Integer posuere erat a ante venenatis dapibus posuere velit
+        aliquet. Donec sed odio dui. Curabitur blandit tempus porttitor.
+      </p>
+      <p>
+        Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac
+        facilisis in, egestas eget quam. Nullam id dolor id nibh ultricies
+        vehicula ut id elit.
+      </p>
+
+      <video width="560" height="315" controls>
+        <source src="my-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <ul>
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+      </ul>
+
+      <ol>
+        <li>First ordered item</li>
+        <li>Second ordered item</li>
+        <li>Third ordered item</li>
+      </ol>
+
+      <label for="email">Email address</label>
+      <input type="email" placeholder="E.G name@example.com" id="email" />
+    </article>
+  </body>
+</html>
