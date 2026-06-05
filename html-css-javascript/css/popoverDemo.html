@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Popover Demo</title>
+    <style>
+      #my-popover {
+        position: absolute;
+        background: white;
+        border: 1px solid black;
+        padding: 1em;
+        /* display: none; */
+      }
+
+      #my-popover[popover-open] {
+        display: block;
+      }
+
+      button {
+        margin-top: 1em;
+        background: rgb(27, 151, 18);
+        color: white;
+        border: 2px solid rgb(27, 151, 18);
+        width: 8em;
+        height: 4em;
+        border-radius: 0.5em;
+      }
+
+      #my-popover-2 {
+        position: absolute;
+        background: white;
+        border: 1px solid black;
+        padding: 1em;
+      }
+
+      #my-popover {
+        top: 200px;
+        left: 50px;
+      }
+
+      [popover]:popover-open {
+        /*  This will only affect open popovers. */
+        background: rgba(16, 133, 223, 0.5);
+        border: 2px solid rgb(16, 133, 223);
+        margin-top: 0.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Popover demo</h1>
+    <h2>Using popover and popovertarget</h2>
+    <h3>Popover 1</h3>
+    <div id="my-popover" popover>Hello, Popover!</div>
+    <button popovertarget="my-popover" popovertargetaction="show">
+      Toggle Popover 1
+    </button>
+    <h3>Popover 2</h3>
+    <div id="my-popover-2" popover>Welcome to Popover 2</div>
+    <button popovertarget="my-popover-2" popovertargetaction="toggle">
+      Toggle Popover 2
+    </button>
+    <h3>Manual Popover</h3>
+    <div id="my-popover-3" popover="manual">This is a manual popover</div>
+    <button popovertarget="my-popover-3">Toggle Popover 3</button>
+    <h3>Hint Popover</h3>
+    <div id="my-popover-4" popover="hint">This is a hint popover</div>
+    <button popovertarget="my-popover-4">Toggle Hint Popover</button>
+  </body>
+</html>
