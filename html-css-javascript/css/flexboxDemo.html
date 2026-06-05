@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Demo</title>
+    <style>
+      .container {
+        display: flex;
+        /* flex-direction: row; */
+        /* flex-direction: column; */
+        /* flex-direction: row-reverse; */
+        /* flex-direction: column-reverse; */
+        /* direction: rtl; */
+        /* writing-mode: vertical-rl; */
+        border: 2px solid black;
+        flex-wrap: wrap;
+        /* flex-flow: column wrap; */
+        /* justify-content: flex-end; */
+        /* justify-content: space-between; */
+      }
+
+      .item {
+        background-color: lightblue;
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid blue;
+        /* align-self: flex-start; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="item">This is the first item. I need to check the align-self</div>
+      <div class="item">Item two</div>
+      <div class="item">Item three</div>
+      <!-- <div class="item">Item three</div>
+      <div class="item">Item three</div>
+      <div class="item">Item three</div>
+      <div class="item">Item three</div>
+      <div class="item">Item three</div>
+      <div class="item">Item three</div>
+      <div class="item">Item three</div>
+      <div class="item">Item three</div>
+      <div class="item">Item three</div>
+      <div class="item">Item three</div>
+      <div class="item">Item three</div>
+      <div class="item">Item three</div>
+      <div class="item">Item three</div>
+      <div class="item">Item three</div>
+      <div class="item">Item three</div> -->
+    </div>
+  </body>
+</html>

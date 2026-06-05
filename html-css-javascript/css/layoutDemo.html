@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Demo</title>
+    <style>
+      .my-element {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1rem;
+      }
+
+      .my-element :first-child {
+        grid-row: 1/2;
+        grid-column: 1/4;
+      }
+
+      .box {
+        border: 1px solid black;
+        padding: 10px;
+        margin: 5px;
+      }
+
+      div span {
+        display: inline-block;
+        border: 1px solid red;
+        padding: 5px;
+      }
+      /* .my-element div {
+        flex: 1 0 auto;
+      } */
+      /* .my-element div {
+        flex-grow: 1;
+        flex-shrink: 0;
+        flex-basis: auto;
+      } */
+
+      img {
+        float: left;
+        margin-right: 1em;
+      }
+
+      .countries {
+        column-count: 2;
+        column-gap: 1em;
+        width: 100%;
+        column-width: 260px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrapper">
+      <div class="my-element">
+        <div class="box">I am sat next to a <span>sibling</span> element</div>
+        <div class="box">If the writing direction is horizontal.</div>
+        <div class="box">Item 1</div>
+        <div class="box">Item 2.</div>
+        <div class="box">Item 3.</div>
+        <div class="box">Item 4.</div>
+        <div class="box">Item 5.</div>
+        <div class="box">Item 6.</div>
+        <div class="box">Item 7.</div>
+        <div class="box">Item 8.</div>
+        <div class="box">Item 9.</div>
+        <div class="box">Item 10.</div>
+        <div class="box">Item 11.</div>
+        <div class="box">Item 12.</div>
+      </div>
+
+      <!-- <article>
+        <img
+          src="https://web.dev/learn/css/layout/image/rainbow.jpg"
+          alt="A raindbow colored liquid texture"
+        />
+        <p>
+          This image floats left, which means these paragraphs wrap around it.
+        </p>
+        <p>
+          Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel
+          augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus
+          porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam
+          venenatis vestibulum. Morbi leo risus, porta ac consectetur ac,
+          vestibulum at eros.
+        </p>
+      </article> -->
+
+      <div class="box">
+        <h1>All countries</h1>
+        <ul class="countries">
+          <li>Argentina</li>
+          <li>Aland Islands</li>
+          <li>Albania</li>
+          <li>Algeria</li>
+          <li>American Samoa</li>
+          <li>Andorra</li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sub grid Demo</title>
+    <style>
+      .container {
+        display: grid;
+        gap: 1em;
+        grid-template-columns: auto 2fr 1fr auto;
+        grid-template-rows: 5fr 1fr 2fr 1fr;
+      }
+
+      .subgrid-container {
+        display: grid;
+        grid-column: auto / span 2;
+        grid-row: auto / span 3;
+
+        /* Comment the next two lines out to see what happens without subgrid */
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+      }
+
+      .featured-subgrid-item {
+        grid-column: span 2;
+      }
+
+      .subgrid-item {
+        grid-row: span 2;
+      }
+
+      /* Presentation Styles only */
+
+      .container {
+        background-color: var(--color-stroke);
+        padding: 1em;
+      }
+
+      .box {
+        background: var(--color-light);
+        border: thin solid var(--color-stroke);
+        max-inline-size: none;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <article class="flow">
+          <h1>Subgrid - columns and rows</h1>
+          <figure class="callout">
+            <p>
+              In this example <code>grid-template-columns: subgrid;</code> and
+              <code>grid-template-rows: subgrid;</code> is applied to the
+              <code>.subgrid-container</code> class, allowing the items in the
+              subgrid to line up with the parent grid tracks.
+            </p>
+          </figure>
+
+          <div class="container" id="container">
+            <div class="box">1</div>
+
+            <div class="subgrid-container">
+              <div class="box featured-subgrid-item">
+                Featured Subgrid item A
+              </div>
+              <div class="box subgrid-item">Subgrid item B</div>
+              <div class="box subgrid-item">Subgrid item C</div>
+            </div>
+
+            <div class="box">2</div>
+            <div class="box">3</div>
+            <div class="box">4</div>
+            <div class="box">5</div>
+            <div class="box">6</div>
+            <div class="box">7</div>
+            <div class="box">8</div>
+            <div class="box">9</div>
+            <div class="box">10</div>
+          </div>
+        </article>
+      </div>
+    </main>
+  </body>
+</html>

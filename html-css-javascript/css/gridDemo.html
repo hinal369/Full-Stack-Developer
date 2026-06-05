@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Demo</title>
+    <style>
+      .container {
+        display: grid;
+        border: 2px solid black;
+        /* grid-template-columns: 1fr 1fr 1fr; */
+        /* grid-template-columns: minmax(0, 1fr); */
+        /* grid-template-columns: repeat(3, 1fr); */
+        /* grid-template-columns: repeat(3, minmax(0, 1fr)); */
+        /* grid-template-columns: 200px repeat(2, 1fr 2fr) 200px; */
+        /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+        grid-column-end: span 2;
+        grid-template-columns:
+          [main-start aside-start] 1fr
+          [aside-end content-start] 2fr
+          [content-end main-end]; /* a two column layout */
+      }
+
+      .box {
+        background-color: lightblue;
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid blue;
+      }
+
+      /* :root {
+        --var-col: 1fr;
+      }
+
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 200px);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+        background-color: var(--color-stroke);
+        padding: 1em;
+        max-width: 70rem;
+      }
+
+      select {
+        min-width: unset;
+      }
+
+      .box {
+        background-color: lightblue;
+        padding: 20px;
+        border: 1px solid blue;
+      } */
+
+      .grid-container {
+        display: grid;
+
+        /* EXPLICIT GRID DEFINITION */
+        grid-template-columns: repeat(6, 200px);
+        grid-template-rows: 100px 100px;
+
+        /* IMPLICIT GRID BEHAVIOR */
+        /* If the browser has to make extra rows, make them 50px tall */
+        grid-auto-rows: 50px;
+      }
+
+      .item {
+        background-color: lightblue;
+        border: 1px solid blue;
+      }
+      .item.extra {
+        background-color: lightpink; /* To visually separate them */
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <article class="flow">
+          <h1>Repeating fixed size tracks</h1>
+          <figure class="callout">
+            <p>
+              In this example there will be as many tracks as will fit into the
+              container with a fixed size of 200px. Resize the editor panel to
+              see the grid change.
+            </p>
+            <p><code>grid-template-columns: repeat(auto-fill, 200px);</code></p>
+          </figure>
+
+          <div class="container" id="container">
+            <div class="box">Item one</div>
+            <div class="box">Item two</div>
+            <div class="box">Item three</div>
+            <div class="box">Item four</div>
+            <div class="box">Item five</div>
+            <div class="box">Item six</div>
+            <div class="box">Item seven</div>
+            <div class="box">Item eight</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="grid-container">
+        <div class="item">Item 1 (Explicit)</div>
+        <div class="item">Item 2 (Explicit)</div>
+        <div class="item">Item 3 (Explicit)</div>
+        <div class="item">Item 4 (Explicit)</div>
+
+        <div class="item extra">Item 5 (Implicit)</div>
+        <div class="item extra">Item 6 (Implicit)</div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border Demo</title>
+    <style>
+      .preview {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        border-color: var(--color-primary);
+        border-width: 5px;
+        aspect-ratio: 5/1;
+      }
+
+      .auto-grid {
+        display: grid;
+        grid-template-columns: repeat(
+          auto-fill,
+          minmax(var(--auto-grid-min-size, 16rem), 1fr)
+        );
+        gap: 1rem;
+        padding: 0;
+      }
+
+      main {
+        width: 100%;
+      }
+
+      #div1 {
+        border-top-color: red;
+        border-right-color: green;
+        border-bottom-color: blue;
+        border-left-color: orange;
+      }
+
+      #div2 {
+        border-top-width: 1px;
+        border-right-width: 3px;
+        border-bottom-width: 5px;
+        border-left-width: 7px;
+      }
+
+      #div7 {
+        border-top-style: dotted;
+        border-right-style: dashed;
+        border-bottom-style: solid;
+        border-left-style: double;
+      }
+
+      #div3 {
+        border-width: 5px;
+        border-color: red green blue orange;
+      }
+
+      #div4 {
+        border-width: 5px;
+        border-width: 1px 3px 5px 7px;
+        border-radius: 1rem;
+      }
+
+      #div5 {
+        border-radius: 1em 2em 3em 4em;
+      }
+
+      #div6 {
+        border-top-left-radius: 1em 2em;
+        border-image-source: url(https://assets.codepen.io/174183/border-image-frame.jpg);
+        border-image-slice: 61 58 51 48;
+        border-image-width: 20px 20px 20px 20px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: stretch stretch;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="auto-grid">
+        <div class="preview" style="border-style: dotted" id="div1">
+          <code>border-style: dotted;</code>
+        </div>
+        <div class="preview" style="border-style: dashed" id="div2">
+          <code>border-style: dashed;</code>
+        </div>
+        <div class="preview" style="border-style: solid" id="div3">
+          <code>border-style: solid;</code>
+        </div>
+        <div class="preview" style="border-style: double" id="div4">
+          <code>border-style: double;</code>
+        </div>
+        <div class="preview" style="border-style: groove" id="div5">
+          <
+          <code>border-style: groove;</code>
+        </div>
+        <div class="preview" style="border-style: ridge" id="div6">
+          <code>border-style: ridge;</code>
+        </div>
+        <div class="preview" style="border-style: inset">
+          <code>border-style: inset;</code>
+        </div>
+        <div class="preview" style="border-style: outset">
+          <code>border-style: outset;</code>
+        </div>
+        <div class="preview" id="div7">
+          <code>border-style: none;</code>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
