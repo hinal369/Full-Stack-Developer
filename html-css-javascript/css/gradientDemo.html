@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gradient Demo</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        height: 200px;
+      }
+      .gradient-box {
+        width: 250px;
+        height: 250px;
+        margin: 20px;
+        border-radius: 10px;
+        border: 2px solid #ccc;
+        border-radius: 50%;
+      }
+      .label {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 14px;
+      }
+      .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Gradient Demo</h1>
+      <p>This is a demonstration of a linear gradient background.</p>
+      <div class="container">
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="background: linear-gradient(black, white)"
+          ></div>
+          <label for="color1">linear-gradient(black, white)</label>
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="background: linear-gradient(to right, black, white)"
+          ></div>
+          <label for="color2">linear-gradient(to right, black, white);</label>
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="background: linear-gradient(to left, black, white)"
+          ></div>
+          <label for="color4">linear-gradient(to left, black, white);</label>
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="background: linear-gradient(to top, black, white)"
+          ></div>
+          <label for="color4">linear-gradient(to top, black, white)</label>
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="background: linear-gradient(45deg, darkred 30%, crimson)"
+          ></div>
+          <label for="color4"
+            >linear-gradient(45deg, darkred 30%, crimson)</label
+          >
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="
+              background: linear-gradient(
+                45deg,
+                darkred 20%,
+                crimson,
+                darkorange 60%,
+                gold,
+                bisque
+              );
+            "
+          ></div>
+          <label for="color4"
+            >linear-gradient(45deg, darkred 20%, crimson, darkorange 60%, gold,
+            bisque)</label
+          >
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="
+              background: radial-gradient(
+                darkred 20%,
+                crimson,
+                darkorange 60%,
+                gold,
+                bisque
+              );
+            "
+          ></div>
+          <label for="color4"
+            >radial-gradient(darkred 20%, crimson, darkorange 60%, gold,
+            bisque)</label
+          >
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="
+              background: radial-gradient(
+                closest-side,
+                darkorange 60%,
+                gold,
+                bisque,
+                darkred 20%,
+                crimson
+              );
+            "
+          ></div>
+          <label for="color4"
+            >radial-gradient(closest-side, darkorange 60%, gold, bisque, darkred
+            20%, crimson)</label
+          >
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="background: conic-gradient(black, white)"
+          ></div>
+          <label for="color4">conic-gradient(black, white)</label>
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="
+              background: conic-gradient(
+                gold 20deg,
+                lightcoral 20deg 190deg,
+                mediumturquoise 190deg 220deg,
+                plum 220deg 320deg,
+                steelblue 320deg
+              );
+            "
+          ></div>
+          <label for="color4"
+            >conic-gradient( gold 20deg, lightcoral 20deg 190deg,
+            mediumturquoise 190deg 220deg, plum 220deg 320deg, steelblue
+            320deg);</label
+          >
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="
+              background: repeating-linear-gradient(
+                45deg,
+                red,
+                red 30px,
+                white 30px,
+                white 60px
+              );
+            "
+          ></div>
+          <label for="color4"
+            >repeating-linear-gradient(45deg, red, red 30px, white 30px, white
+            60px);</label
+          >
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="
+              background:
+                linear-gradient(-45deg, blue -30%, transparent 80%),
+                linear-gradient(
+                  45deg,
+                  darkred 20%,
+                  crimson,
+                  darkorange 60%,
+                  gold,
+                  bisque
+                );
+            "
+          ></div>
+          <label for="color4"
+            >linear-gradient(-45deg, blue -30%, transparent 80%),
+            linear-gradient(45deg, darkred 20%, crimson, darkorange 60%, gold,
+            bisque);</label
+          >
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="background: linear-gradient(in oklch, deeppink, yellow)"
+          ></div>
+          <label for="color4"
+            >linear-gradient(in oklch, deeppink, yellow)</label
+          >
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="background: linear-gradient(in oklch increasing hue, deeppink, yellow)"
+          ></div>
+          <label for="color4"
+            >linear-gradient(in oklch increasing hue, deeppink, yellow)</label
+          >
+        </div> 
+        
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="background: linear-gradient(in oklch decreasing hue, deeppink, yellow)"
+          ></div>
+          <label for="color4"
+            >linear-gradient(in oklch decreasing hue, deeppink, yellow)</label
+          >
+        </div>
+
+        <div class="box">
+          <div
+            class="gradient-box"
+            style="background: linear-gradient(in oklch longer hue, deeppink, yellow);"
+          ></div>
+          <label for="color4"
+            >linear-gradient(in oklch longer hue, deeppink, yellow)</label
+          >
+      </div>
+    </main>
+  </body>
+</html>

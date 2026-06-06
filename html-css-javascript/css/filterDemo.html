@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filter Demo</title>
+    <style>
+      .demo {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+
+      img {
+        width: 150px;
+        height: auto;
+      }
+
+      #img1 {
+        filter: blur(0.1em);
+      }
+
+      #img2 {
+        filter: brightness(80%);
+      }
+
+      #img3 {
+        filter: contrast(160%);
+      }
+
+      #img4 {
+        filter: grayscale(80%);
+      }
+
+      #img5 {
+        filter: invert(1);
+      }
+
+      #img6 {
+        filter: opacity(0.3);
+      }
+
+      #img7 {
+        filter: saturate(155%);
+      }
+
+      #img8 {
+        filter: sepia(80%);
+      }
+
+      #img9 {
+        filter: hue-rotate(120deg);
+      }
+
+      #img10 {
+        filter: drop-shadow(5px 5px 10px rgb(124, 224, 9));
+      }
+
+      #img11 {
+        filter: url(#pink-filter);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo">
+      <div>
+        <img
+          src="https://assets.codepen.io/5928893/learn-css-claudio-poggio-dPklt2rBgDw-unsplash.jpg"
+          alt="Diagonal checkboard tiles"
+        />
+        <p>No filter</p>
+      </div>
+
+      <div>
+        <img
+          src="https://assets.codepen.io/5928893/learn-css-claudio-poggio-dPklt2rBgDw-unsplash.jpg"
+          alt="Diagonal checkboard tiles"
+          id="img1"
+        />
+        <p>filter: blur(0.2em)</p>
+      </div>
+
+      <div>
+        <img
+          src="https://assets.codepen.io/5928893/learn-css-claudio-poggio-dPklt2rBgDw-unsplash.jpg"
+          alt="Diagonal checkboard tiles"
+          id="img2"
+        />
+        <p><code>filter: brightness(80%);</code></p>
+      </div>
+
+      <div>
+        <img
+          src="https://assets.codepen.io/5928893/learn-css-claudio-poggio-dPklt2rBgDw-unsplash.jpg"
+          alt="Diagonal checkboard tiles"
+          id="img3"
+        />
+        <p><code>filter: contrast(160%);</code></p>
+      </div>
+
+      <div>
+        <img
+          src="https://assets.codepen.io/5928893/learn-css-claudio-poggio-dPklt2rBgDw-unsplash.jpg"
+          alt="Diagonal checkboard tiles"
+          id="img4"
+        />
+        <p><code>filter: grayscale(80%);</code></p>
+      </div>
+
+      <div>
+        <img
+          src="https://assets.codepen.io/5928893/learn-css-claudio-poggio-dPklt2rBgDw-unsplash.jpg"
+          alt="Diagonal checkboard tiles"
+          id="img5"
+        />
+        <p><code>filter: invert(1);</code></p>
+      </div>
+
+      <div>
+        <img
+          src="https://assets.codepen.io/5928893/learn-css-claudio-poggio-dPklt2rBgDw-unsplash.jpg"
+          alt="Diagonal checkboard tiles"
+          id="img6"
+        />
+        <p><code>filter: opacity(0.3);;</code></p>
+      </div>
+
+      <div>
+        <img
+          src="https://assets.codepen.io/5928893/learn-css-claudio-poggio-dPklt2rBgDw-unsplash.jpg"
+          alt="Diagonal checkboard tiles"
+          id="img7"
+        />
+        <p><code>filter: saturate(155%);</code></p>
+      </div>
+
+      <div>
+        <img
+          src="https://assets.codepen.io/5928893/learn-css-claudio-poggio-dPklt2rBgDw-unsplash.jpg"
+          alt="Diagonal checkboard tiles"
+          id="img8"
+        />
+        <p><code>filter: sepia(70%);</code></p>
+      </div>
+
+      <div>
+        <img
+          src="https://assets.codepen.io/5928893/learn-css-claudio-poggio-dPklt2rBgDw-unsplash.jpg"
+          alt="Diagonal checkboard tiles"
+          id="img9"
+        />
+        <p><code>filter: hue-rotate(120deg);</code></p>
+      </div>
+
+      <div>
+        <img
+          src="https://assets.codepen.io/5928893/learn-css-claudio-poggio-dPklt2rBgDw-unsplash.jpg"
+          alt="Diagonal checkboard tiles"
+          id="img10"
+        />
+        <p><code>filter: drop-shadow(5px 5px 10px orange);</code></p>
+      </div>
+
+      <div>
+        <img
+          src="https://assets.codepen.io/5928893/learn-css-claudio-poggio-dPklt2rBgDw-unsplash.jpg"
+          alt="Diagonal checkboard tiles"
+          id="img11"
+        />
+        <p><code>filter: url(#pink-filter);</code></p>
+      </div>
+
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="pink-filter" x="0" y="0" width="100%" height="100%">
+            <feComponentTransfer>
+              <feFuncR type="linear" slope="1" intercept="0.5"></feFuncR>
+              <feFuncG type="linear" slope="0.5" intercept="0.5"></feFuncG>
+              <feFuncB type="linear" slope="0" intercept="1"></feFuncB>
+            </feComponentTransfer>
+          </filter>
+        </defs>
+      </svg>
+    </div>
+  </body>
+</html>
