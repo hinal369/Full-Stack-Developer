@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shapes Demo</title>
+    <style>
+      :root {
+        --color-primary: #4f46e5;
+        --color-mid: #c7d2fe;
+        --font-mono:
+          "SF Mono", SF Mono, SF Mono-Regular, Consolas, "Liberation Mono",
+          Menlo, Courier, monospace;
+      }
+
+      .inset {
+        clip-path: inset(10%);
+      }
+
+      .inset.rounded {
+        clip-path: inset(10% round 20%);
+      }
+
+      .rect {
+        clip-path: rect(10% 90% 90% 10%);
+      }
+
+      .rect.rounded {
+        clip-path: rect(10% 90% 90% 10% round 20%);
+      }
+
+      .circle {
+        clip-path: circle(45%);
+      }
+
+      .ellipse {
+        clip-path: ellipse(45% 25%);
+      }
+
+      /* display styles */
+
+      .examples-container {
+        --box-width: 10vw;
+
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 50vw;
+        margin: 0 auto;
+      }
+
+      .example {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .label {
+        text-align: center;
+        font-family: var(--font-mono);
+        margin: 0.5em 0;
+      }
+
+      .outer-box {
+        box-sizing: content-box;
+        width: var(--box-width);
+        height: var(--box-width);
+        background: var(--color-primary);
+      }
+
+      .outer-box:has(.inner-box) {
+        background: none;
+        border: dashed 2px var(--color-mid);
+      }
+
+      .inner-box {
+        width: var(--box-width);
+        height: var(--box-width);
+        background: var(--color-primary);
+      }
+
+      .my-element {
+        width: 80px;
+        height: 60px;
+        background: blue;
+        /* clip-path: rect(15px 75px 90px 10px); */
+        /* clip-path: inset(15px 10px 15px 10px round 30%); */
+        clip-path: polygon(50% 0, 0 100%, 100% 100%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="my-element"></div>
+    <div class="examples-container">
+      <div class="example">
+        <div class="label">inset()</div>
+        <div class="outer-box">
+          <div class="inner-box inset"></div>
+        </div>
+      </div>
+      <div class="example">
+        <div class="label">inset()</div>
+        <div class="outer-box">
+          <div class="inner-box inset rounded"></div>
+        </div>
+        <div class="label">round 20%</div>
+      </div>
+      <div class="example">
+        <div class="label">rect()</div>
+        <div class="outer-box">
+          <div class="inner-box clipped rect"></div>
+        </div>
+      </div>
+      <div class="example">
+        <div class="label">rect()</div>
+        <div class="outer-box">
+          <div class="inner-box rect rounded"></div>
+        </div>
+        <div class="label">round 20%</div>
+      </div>
+      <div class="example">
+        <div class="label">circle()</div>
+        <div class="outer-box">
+          <div class="inner-box circle"></div>
+        </div>
+      </div>
+      <div class="example">
+        <div class="label">ellipse()</div>
+        <div class="outer-box">
+          <div class="inner-box ellipse"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
