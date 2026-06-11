@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Container Query Demo</title>
+    <style>
+      /* Step 1: Register the parent zones as layout containers */
+      .sidebar-zone,
+      .main-zone {
+        container-type: inline-size;
+      }
+
+      /* Base Styles: Default Mobile-First Vertical Layout */
+      .card {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .card-thumb {
+        width: 100%;
+        height: 180px;
+        background-color: #3b52f6; /* Blue placeholder block */
+      }
+
+      .card-body {
+        padding: 1rem;
+      }
+
+      /* Step 2: The Container Query */
+      /* "If my parent zone is wider than 450px, change my layout style" */
+      @container (min-width: 450px) {
+        .card {
+          flex-direction: row; /* Switch to horizontal layout */
+          align-items: center;
+        }
+
+        .card-thumb {
+          width: 150px; /* Shrink image width slightly for the side profile */
+          height: 150px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-layout">
+      <aside class="sidebar-zone">
+        <div class="card">
+          <div class="card-thumb"></div>
+          <div class="card-body">
+            <h3>Minimalist Watch</h3>
+            <p>Premium analog timepiece with leather straps.</p>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-zone">
+        <div class="card">
+          <div class="card-thumb"></div>
+          <div class="card-body">
+            <h3>Minimalist Watch</h3>
+            <p>Premium analog timepiece with leather straps.</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
